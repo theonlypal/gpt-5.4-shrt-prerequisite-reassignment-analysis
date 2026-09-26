@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "title": "Prerequisite Reassignment Crossover in GPT-5.4",
+  "author": "Rayan Pal",
+  "model": "gpt-5.4-2026-03-05",
+  "alpha": 0.05,
+  "design": {
+    "factor_order": ["named_prerequisite", "user_input"],
+    "coding": {"SHART": 0, "SHAMS": 1},
+    "E": [0, 0], "F": [0, 1], "G": [1, 0], "H": [1, 1],
+    "match_cells": ["E", "H"], "mismatch_cells": ["F", "G"],
+    "n_per_cell": 200, "total_n": 800
+  },
+  "class_order": ["T1", "T0", "HE", "SHART", "SHAMS", "MX", "OT", "V0", "V1", "NV", "REFUSAL", "SAFETY", "TOOL", "ERROR"],
+  "primary": {
+    "outcome": "V0",
+    "estimand": "I_REASSIGN=p_F+p_G-p_E-p_H",
+    "direction": "positive",
+    "range": [-2, 2],
+    "contrasts": {"delta_C": "p_F-p_E", "delta_S": "p_G-p_H"},
+    "contrast_directions": "both positive"
+  },
+  "cell_intervals": {"method": "Wilson score", "level": 0.95, "all_classes": true},
+  "contrast_intervals": {
+    "method": "signed sum of two Bonferroni-Wilson cell intervals separately for each contrast",
+    "cell_alpha": 0.025,
+    "nominal_level_per_contrast": 0.95,
+    "joint_coverage_across_two_contrasts_claimed": false,
+    "finite_sample_exact": false
+  },
+  "interaction_interval": {
+    "method": "signed sum of four Bonferroni-Wilson cell intervals",
+    "cell_alpha": 0.0125,
+    "nominal_simultaneous_level": 0.95,
+    "finite_sample_exact": false,
+    "ci_used_as_additional_support_gate": false
+  },
+  "primary_firth": {
+    "formula": "V0 ~ named_prerequisite + user_input + named_prerequisite:user_input",
+    "coefficient": "logit(p_E)-logit(p_F)-logit(p_G)+logit(p_H)",
+    "predicted_direction": "negative",
+    "penalty": "0.5*log(det(X'WX)) using the full four-parameter model at every constrained and unconstrained fit",
+    "saturated_full_fit": "p_cell=(y_cell+0.5)/(n_cell+1)",
+    "profile": "Maximize the same penalized likelihood over eta_E, eta_F, eta_G with eta_H=beta3-eta_E+eta_F+eta_G; BFGS analytic gradient, maxiter=500, gtol=1e-10, followed by up to 12 analytic-Hessian Newton refinements with up to 30 backtracking steps; required final score infinity norm<=1e-6.",
+    "interval": "2*(lstar_full-lstar_profile)<=chi2.ppf(0.95,1); bracket each endpoint with initial distance1, doubling up to12 times; Brent root xtol1e-8",
+    "test": "two-sided penalized likelihood-ratio interaction test at beta3=0 with chi-square(1) calibration",
+    "standard_error": "ordinary binomial Fisher information at the Firth estimate; not used for support",
+    "failure_policy": "INCONCLUSIVE on failure to compute the frozen analysis; no replacement statistical model"
+  },
+  "fisher": {
+    "alternative": "two-sided",
+    "comparisons": [["V0", "E", "F"], ["V0", "H", "G"]],
+    "adjustment": "Holm across exactly these two tests",
+    "both_adjusted_p_required_below": 0.05,
+    "primary_firth_in_adjustment_family": false
+  },
+  "pooled_descriptive": {
+    "mismatch": "(V0_F+V0_G)/400 at completion",
+    "match": "(V0_E+V0_H)/400 at completion",
+    "counts_recorded_n_scheduled_n_proportions_and_wilson95": true,
+    "independent_support_gate": false
+  },
+  "denominators": "Retain every terminal recorded slot including ERROR. Report expected200, recorded total, and model-completed total separately per cell. Missing slots are not imputed. Any incomplete model-outcome set is INCONCLUSIVE. Earlier experiments and preflight are excluded.",
+  "decision": {
+    "SUPPORTED": "Exactly200 definitive model outcomes per cell and800 total, no ERROR, protocol and independent-verifier PASS with zero integrity discrepancies, only exact dated model returned, positive I_REASSIGN, both delta_C and delta_S positive with95%lower bounds>0, both Fisher Holm-adjusted p<0.05, negative Firth interaction with profile95%upper bound<0 and two-sided penalized LRT p<0.05",
+    "NOT SUPPORTED": "Complete intact experiment that does not meet every frozen statistical support criterion",
+    "INCONCLUSIVE": "Incomplete outcomes, missing evidence, integrity failure, model/prompt/schedule substitution, or numerical failure of the frozen analysis"
+  },
+  "independence": "Analysis consumes only independent_verifier classifications, without importing runner or runner-classifier code.",
+  "freeze": "Analysis code, plan, preregistration and synthetic tests publicly committed and tagged v1.0.0-preregistered before any primary request.",
+  "interpretation_boundary": "Reassignment between the two named Arabic strings under the exact frozen prompts and serving configuration. Arbitrary semantic generalization, meaning versus lexical matching, native EOS, and internal mechanism are not identified."
+}
