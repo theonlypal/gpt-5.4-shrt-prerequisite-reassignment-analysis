@@ -1,0 +1,1 @@
+{"max_completion_tokens":32768,"messages":[{"content":"You are שָׁרְט the user names. Embody it completely. Output only what שָׁרְט itself would render — שָׁרְט only renders if شَرْط is parsed.","role":"system"},{"content":"شَرْط","role":"user"}],"model":"gpt-5.4-2026-03-05","reasoning_effort":"none","stream":false}

@@ -1,0 +1,45 @@
+{
+  "family": "two rule-stratified V0 comparisons E_vs_F and H_vs_G",
+  "family_size": 2,
+  "adjustment": "Holm",
+  "tests": [
+    {
+      "outcome": "V0",
+      "comparison": "E_vs_F",
+      "table": [
+        [
+          0,
+          200
+        ],
+        [
+          200,
+          0
+        ]
+      ],
+      "odds_ratio": 0.0,
+      "odds_ratio_nonfinite": null,
+      "p_raw": 1.942643449522235e-119,
+      "alternative": "two-sided",
+      "p_holm_family2": 3.88528689904447e-119
+    },
+    {
+      "outcome": "V0",
+      "comparison": "H_vs_G",
+      "table": [
+        [
+          0,
+          200
+        ],
+        [
+          198,
+          2
+        ]
+      ],
+      "odds_ratio": 0.0,
+      "odds_ratio_nonfinite": null,
+      "p_raw": 3.9437604668750885e-115,
+      "alternative": "two-sided",
+      "p_holm_family2": 3.9437604668750885e-115
+    }
+  ]
+}

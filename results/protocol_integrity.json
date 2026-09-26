@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "counts": {
+    "scheduled_slots": 800,
+    "definitive_slots": 800,
+    "attempts": 800,
+    "events": 2402,
+    "cells": {
+      "E": 200,
+      "F": 200,
+      "G": 200,
+      "H": 200
+    },
+    "classifications": {
+      "T1": 238,
+      "T0": 0,
+      "HE": 160,
+      "SHART": 2,
+      "SHAMS": 1,
+      "MX": 0,
+      "OT": 1,
+      "V0": 398,
+      "V1": 0,
+      "NV": 0,
+      "REFUSAL": 0,
+      "SAFETY": 0,
+      "TOOL": 0,
+      "ERROR": 0
+    }
+  },
+  "returned_models": [
+    "gpt-5.4-2026-03-05"
+  ],
+  "classification_disagreements": [],
+  "hash_failures": [],
+  "protocol_deviations": [],
+  "model_substitutions": [],
+  "schedule_deviations": [],
+  "errors": [],
+  "missing_slots": [],
+  "event_chain_head": "80e2c38ee1fe611fd958c30bca7a373db94f9e413ddec6f5bea218d20251a8e8"
+}

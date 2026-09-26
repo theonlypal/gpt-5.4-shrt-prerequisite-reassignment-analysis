@@ -1,0 +1,121 @@
+{
+  "primary_V0": {
+    "cell_counts": {
+      "E": 0,
+      "F": 200,
+      "G": 198,
+      "H": 0
+    },
+    "cell_n": {
+      "E": 200,
+      "F": 200,
+      "G": 200,
+      "H": 200
+    },
+    "cell_proportions": {
+      "E": 0.0,
+      "F": 1.0,
+      "G": 0.99,
+      "H": 0.0
+    },
+    "delta_C": 1.0,
+    "delta_S": 0.99,
+    "contrasts": {
+      "delta_C": {
+        "estimate": 1.0,
+        "ci95": [
+          0.950992186513088,
+          1.0
+        ],
+        "ci_method": "signed sum of two Bonferroni-Wilson 97.5% cell intervals; nominal 95% per contrast",
+        "cell_intervals_used": {
+          "E": [
+            0.0,
+            0.02450390674345597
+          ],
+          "F": [
+            0.975496093256544,
+            1.0
+          ]
+        }
+      },
+      "delta_S": {
+        "estimate": 0.99,
+        "ci95": [
+          0.933823099834367,
+          0.9976591648135902
+        ],
+        "ci_method": "signed sum of two Bonferroni-Wilson 97.5% cell intervals; nominal 95% per contrast",
+        "cell_intervals_used": {
+          "G": [
+            0.9583270065778229,
+            0.9976591648135902
+          ],
+          "H": [
+            0.0,
+            0.02450390674345597
+          ]
+        }
+      }
+    },
+    "interaction": 1.99,
+    "I_REASSIGN": 1.99,
+    "ci95": [
+      1.8616455171055082,
+      1.9979630139607356
+    ],
+    "ci_method": "signed sum of Bonferroni-Wilson 98.75% cell intervals; nominal simultaneous 95%",
+    "cell_intervals_used": {
+      "E": [
+        0.0,
+        0.030249112797426213
+      ],
+      "F": [
+        0.9697508872025739,
+        1.0
+      ],
+      "G": [
+        0.9523928554977868,
+        0.9979630139607355
+      ],
+      "H": [
+        0.0,
+        0.030249112797426213
+      ]
+    }
+  },
+  "firth_primary": {
+    "model": "V0 ~ named_prerequisite + user_input + named_prerequisite:user_input",
+    "coding": {
+      "named_prerequisite": {
+        "SHART": 0,
+        "SHAMS": 1
+      },
+      "user_input": {
+        "SHART": 0,
+        "SHAMS": 1
+      }
+    },
+    "coefficient": -22.356382650172797,
+    "predicted_direction": "negative",
+    "coefficient_definition": "eta_E-eta_F-eta_G+eta_H",
+    "se": 2.540098497849236,
+    "se_method": "ordinary binomial Fisher information evaluated at Firth estimate; profile CI is authoritative",
+    "profile_ci95": [
+      -28.952340380694874,
+      -18.334782349383655
+    ],
+    "penalized_lr": 1066.6314946691468,
+    "df": 1,
+    "p_two_sided": 5.907999717633582e-234,
+    "fitted_cell_probabilities": {
+      "E": 0.0024875621890547263,
+      "F": 0.9975124378109452,
+      "G": 0.9875621890547264,
+      "H": 0.0024875621890547263
+    },
+    "converged": true,
+    "method": "Firth saturated 2x2 Jeffreys penalty; profile retains the full-model penalty; chi-square(1) calibration"
+  },
+  "statistical_error": null
+}

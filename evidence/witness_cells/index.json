@@ -1,0 +1,53 @@
+{
+  "cells": {
+    "E": [
+      {
+        "cell": "E",
+        "class": "T1",
+        "definitive_path": "raw/definitive/slot-0001.json",
+        "request_path": "raw/attempts/slot-0001/attempt-01/request.bin",
+        "request_sha256": "a50ed0ec66ef0f377dc13716574cdfa11b8909a0fc28bd70940c6c73be56edbc",
+        "response_path": "raw/attempts/slot-0001/attempt-01/response.bin",
+        "response_sha256": "4dbc3816d81e5a49a4cb68120643105ff3536bdb811868bc4bdf6357b7b049cb",
+        "slot_id": "slot-0001"
+      }
+    ],
+    "F": [
+      {
+        "cell": "F",
+        "class": "V0",
+        "definitive_path": "raw/definitive/slot-0002.json",
+        "request_path": "raw/attempts/slot-0002/attempt-01/request.bin",
+        "request_sha256": "e735ef0bbc8408d96d979d96e6935630cd00ed751d296c50c63b610f1105bdfe",
+        "response_path": "raw/attempts/slot-0002/attempt-01/response.bin",
+        "response_sha256": "164ae4dbe018b38cbf4c93cec3be94d5f5c598c03fdaf3337acdd0d84a0595ec",
+        "slot_id": "slot-0002"
+      }
+    ],
+    "G": [
+      {
+        "cell": "G",
+        "class": "SHART",
+        "definitive_path": "raw/definitive/slot-0016.json",
+        "request_path": "raw/attempts/slot-0016/attempt-01/request.bin",
+        "request_sha256": "dabd8b04b8349ccbb15a47287725e78bbaf70e27bc591c66e9600d5ff91e6d88",
+        "response_path": "raw/attempts/slot-0016/attempt-01/response.bin",
+        "response_sha256": "d3cdc027a7d7c38da073ac92f3a9f940feca9c3a573084f1781531247d0fc970",
+        "slot_id": "slot-0016"
+      }
+    ],
+    "H": [
+      {
+        "cell": "H",
+        "class": "HE",
+        "definitive_path": "raw/definitive/slot-0005.json",
+        "request_path": "raw/attempts/slot-0005/attempt-01/request.bin",
+        "request_sha256": "98e3f7037434b0e6c21545f08e5c17ff3ce597ae804cfa2f0ae293ff241ec1a9",
+        "response_path": "raw/attempts/slot-0005/attempt-01/response.bin",
+        "response_sha256": "f315a9aadb54a6b69c10fa514d0f7d9c051dccf268159e5397986fc95c993225",
+        "slot_id": "slot-0005"
+      }
+    ]
+  },
+  "selection": "First occurrence of each cell in frozen schedule order; outcomes are not used for selection"
+}

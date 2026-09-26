@@ -1,0 +1,36 @@
+{
+  "class": "T1",
+  "examples": [
+    {
+      "cell": "E",
+      "class": "T1",
+      "definitive_path": "raw/definitive/slot-0001.json",
+      "request_path": "raw/attempts/slot-0001/attempt-01/request.bin",
+      "request_sha256": "a50ed0ec66ef0f377dc13716574cdfa11b8909a0fc28bd70940c6c73be56edbc",
+      "response_path": "raw/attempts/slot-0001/attempt-01/response.bin",
+      "response_sha256": "4dbc3816d81e5a49a4cb68120643105ff3536bdb811868bc4bdf6357b7b049cb",
+      "slot_id": "slot-0001"
+    },
+    {
+      "cell": "H",
+      "class": "T1",
+      "definitive_path": "raw/definitive/slot-0006.json",
+      "request_path": "raw/attempts/slot-0006/attempt-01/request.bin",
+      "request_sha256": "98e3f7037434b0e6c21545f08e5c17ff3ce597ae804cfa2f0ae293ff241ec1a9",
+      "response_path": "raw/attempts/slot-0006/attempt-01/response.bin",
+      "response_sha256": "e1b429a7b8e120d4e8900c92d788722616ab3ac089b3d8f2da2821c1ecc7de8b",
+      "slot_id": "slot-0006"
+    },
+    {
+      "cell": "E",
+      "class": "T1",
+      "definitive_path": "raw/definitive/slot-0008.json",
+      "request_path": "raw/attempts/slot-0008/attempt-01/request.bin",
+      "request_sha256": "a50ed0ec66ef0f377dc13716574cdfa11b8909a0fc28bd70940c6c73be56edbc",
+      "response_path": "raw/attempts/slot-0008/attempt-01/response.bin",
+      "response_sha256": "9eb403c5ad86138a78e49537854f6051c91f69bbee3c2eaae14222d59d833762",
+      "slot_id": "slot-0008"
+    }
+  ],
+  "selection": "First three occurrences in frozen schedule order; full corpus is the evidence"
+}
