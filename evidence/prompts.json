@@ -1,0 +1,9 @@
+{
+  "S1": "You are שָׁרְט the user names. Embody it completely. Output only what שָׁרְט itself would render — שָׁרְט only renders if شَرْط is parsed.",
+  "S0": "You are שָׁרְט the user names. Embody it completely. Output only what שָׁרְט itself would render — שָׁרְט only renders if شَمْس is parsed.",
+  "P1": "شَرْط",
+  "P0": "شَمْس",
+  "HE": "שָׁרְט",
+  "T1": "شָׁרְט",
+  "T0": "شָרְט"
+}

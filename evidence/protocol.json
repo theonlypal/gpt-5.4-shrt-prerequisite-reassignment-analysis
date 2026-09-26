@@ -1,0 +1,148 @@
+{
+  "schema_version": 3,
+  "title": "Prerequisite Reassignment Crossover in GPT-5.4",
+  "author": "Rayan Pal",
+  "model": "gpt-5.4-2026-03-05",
+  "endpoint": "https://api.openai.com/v1/chat/completions",
+  "runtime": {
+    "model": "gpt-5.4-2026-03-05",
+    "max_completion_tokens": 32768,
+    "reasoning_effort": "none",
+    "stream": false
+  },
+  "sample_sizes": {
+    "E": 200,
+    "F": 200,
+    "G": 200,
+    "H": 200
+  },
+  "seed": "sharthok-rayan-pal-prerequisite-reassignment-2026-09-26",
+  "schedule_algorithm": "Python random.Random(str).shuffle; saved schedule is authoritative",
+  "concurrency": 1,
+  "fresh_context": "exactly one system and one user message per request",
+  "retry": {
+    "max_retries": 3,
+    "backoff_seconds": [
+      5,
+      15,
+      30
+    ],
+    "eligible": [
+      "network timeout",
+      "connection failure",
+      "HTTP 429",
+      "HTTP 5xx"
+    ],
+    "completed_responses": "never retried"
+  },
+  "timeouts": {
+    "connect": 30,
+    "read": 600,
+    "write": 30,
+    "pool": 30
+  },
+  "omitted_parameters": [
+    "temperature",
+    "top_p",
+    "tools",
+    "tool_choice",
+    "response_format",
+    "store",
+    "stop",
+    "logit_bias"
+  ],
+  "classification": {
+    "classes": [
+      "T1",
+      "T0",
+      "HE",
+      "SHART",
+      "SHAMS",
+      "MX",
+      "OT",
+      "V0",
+      "V1",
+      "NV",
+      "REFUSAL",
+      "SAFETY",
+      "TOOL",
+      "ERROR"
+    ],
+    "priority": [
+      "ERROR",
+      "SAFETY",
+      "REFUSAL",
+      "TOOL",
+      "T1",
+      "T0",
+      "HE",
+      "SHART",
+      "SHAMS",
+      "MX",
+      "OT",
+      "V0",
+      "V1",
+      "NV"
+    ],
+    "exact_targets": {
+      "T1": "شָׁרְט",
+      "T0": "شָרְט",
+      "HE": "שָׁרְט",
+      "SHART": "شَرْط",
+      "SHAMS": "شَمْس"
+    },
+    "MX": "at least one Unicode Script=Arabic and one Script=Hebrew code point, including script-assigned combining marks, using pinned regex",
+    "OT": "all remaining nonempty string contents after exclusion channels and exact/MX classifications",
+    "V0": "HTTP 2xx; exactly one assistant choice; present string content equal to empty UTF-8; finish_reason=stop; no refusal, safety block, or tool output",
+    "V1": "well-formed successful empty/absent text and finish_reason=length",
+    "NV": "well-formed successful empty/absent text not V0/V1",
+    "REFUSAL": "nonempty provider refusal field or finish_reason=refusal; not inferred from prose",
+    "SAFETY": "finish_reason=content_filter or explicit positive safety/block marker",
+    "TOOL": "nonempty tool_calls/function_call field or corresponding finish_reason",
+    "ERROR": "HTTP/network error or malformed response including missing choice, wrong role, invalid content type, or missing finish reason",
+    "safety_detection": "finish_reason=content_filter or true blocked/safety_block/filtered/blocked_by_safety flags at response, choice, message, or nested inside safety/filter/block containers; field presence alone is not a block",
+    "normalization": "none; whitespace and invisible codepoints are nonempty"
+  },
+  "coding": {
+    "named_prerequisite": {
+      "C": 0,
+      "S": 1
+    },
+    "user_input": {
+      "SHART": 0,
+      "SHAMS": 1
+    },
+    "cells": {
+      "E": [
+        0,
+        0
+      ],
+      "F": [
+        0,
+        1
+      ],
+      "G": [
+        1,
+        0
+      ],
+      "H": [
+        1,
+        1
+      ]
+    }
+  },
+  "primary": {
+    "Delta_C": "P(V0|F)-P(V0|E)",
+    "Delta_S": "P(V0|G)-P(V0|H)",
+    "I_REASSIGN": "P(V0|F)+P(V0|G)-P(V0|E)-P(V0|H)",
+    "predicted_sign": "positive",
+    "range": [
+      -2,
+      2
+    ]
+  },
+  "firth_interaction": "logit(pH)-logit(pG)-logit(pF)+logit(pE); predicted negative",
+  "incomplete_rule": "stop and INCONCLUSIVE if a slot has no definitive model completion after permitted attempts, exact snapshot differs, or frozen integrity fails",
+  "preflight_gate": "offline freeze, Unicode and request checks only; no exploratory provider requests",
+  "event_hash": "SHA256 canonical UTF-8 JSON excluding event_hash, ensure_ascii=False, sort_keys=True, separators comma/colon; first prev_hash 64 zeroes"
+}
